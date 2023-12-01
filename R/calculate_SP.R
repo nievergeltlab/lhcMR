@@ -88,7 +88,8 @@ calculate_SP <- function(input.df,trait.names,run_ldsc=TRUE,run_MR=TRUE,saveRFil
 
     #test.exp = matrix(NA,nrow=SP_single,ncol=5)
     #test.out = matrix(NA,nrow=SP_single,ncol=5)
-
+  print("parameters are")
+   print(c(bX,pi1,sig1,w8s,M,m0,nX))
     test.exp <- parallel::mclapply(par.df[[1]], function(x) {
       theta = unlist(x)
       test1 = optim(theta, singleTrait_likelihood,
